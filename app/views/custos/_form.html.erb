@@ -1,0 +1,33 @@
+<%= form_for(@custo) do |f| %>
+  <% if @custo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@custo.errors.count, "error") %> prohibited this custo from being saved:</h2>
+
+      <ul>
+      <% @custo.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :tipo %><br>
+    <%= f.text_field :tipo %>
+  </div>
+  <div class="field">
+    <%= f.label :data %><br>
+    <%= f.date_select :data %>
+  </div>
+  <div class="field">
+    <%= f.label :valor %><br>
+    <%= f.text_field :valor %>
+  </div>
+  <div class="field">
+    <%= f.label :viagem_id %><br>
+    <%= f.text_field :viagem_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

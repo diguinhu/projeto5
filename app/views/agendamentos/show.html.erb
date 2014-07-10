@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @agendamento.user.id %>
+</p>
+
+<p>
+  <strong>Viagem:</strong>
+  <%= @agendamento.viagem.id %>
+</p>
+
+<%= link_to 'Edit', edit_agendamento_path(@agendamento) %> |
+<%= link_to 'Back', agendamentos_path %>
