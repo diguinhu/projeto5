@@ -1,4 +1,4 @@
-<%= form_for(@custo) do |f| %>
+<%= form_for(@custo, @viagem) do |f| %>
   <% if @custo.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@custo.errors.count, "error") %> prohibited this custo from being saved:</h2>

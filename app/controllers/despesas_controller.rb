@@ -4,7 +4,7 @@ class DespesasController < ApplicationController
   # GET /despesas
   # GET /despesas.json
   def index
-    @despesas = Despesa.all
+    @despesa = Despesa.all
   end
 
   # GET /despesas/1

@@ -4,7 +4,11 @@ class CustosController < ApplicationController
   # GET /custos
   # GET /custos.json
   def index
-    @custos = Custo.all
+    if current_user.present?
+      @custos = viagem.custos
+      else
+      redirect_to '/users/sign_in'
+    end
   end
 
   # GET /custos/1
@@ -14,6 +18,8 @@ class CustosController < ApplicationController
 
   # GET /custos/new
   def new
+    @viagem = Viagem.find(params[:viagem_id])
+
     if current_user.present?
     @custo = Custo.new
     else
