@@ -1,4 +1,5 @@
 class CustosController < ApplicationController
+  
   before_action :set_custo, only: [:show, :edit, :update, :destroy]
 
   # GET /custos
@@ -35,11 +36,12 @@ class CustosController < ApplicationController
   # POST /custos
   # POST /custos.json
   def create
+    @viagem = Viagem.find(params[:viagem_id])
     @custo = Custo.new(custo_params)
 
     respond_to do |format|
       if @custo.save
-        format.html { redirect_to @custo, notice: 'Custo was successfully created.' }
+        format.html { redirect_to viagem_custo_path(@viagem,@custo), notice: 'Custo was successfully created.' }
         format.json { render :show, status: :created, location: @custo }
       else
         format.html { render :new }
@@ -76,6 +78,10 @@ class CustosController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_custo
       @custo = Custo.find(params[:id])
+    end
+
+    def set_viagem
+      @viagem = Viagem.find(params[:viagem_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
