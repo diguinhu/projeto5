@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  resources :calendarios
+
+  resources :agendas
+
+  resources :calendars
+
   resources :custos
 
   resources :despesas
@@ -8,7 +14,7 @@ Rails.application.routes.draw do
   resources :viagems do 
     resources :custos
     end
-    
+
 
   devise_for :users
 

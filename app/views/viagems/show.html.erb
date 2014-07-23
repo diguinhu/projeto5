@@ -13,4 +13,8 @@
 
 <%= link_to 'Edit', edit_viagem_path(@viagem) %> |
 <%= link_to 'Back', viagems_path %>
-<td><%= link_to "Custos de Viagem", new_viagem_custo_path(@viagem)%></td>
+<td><%= link_to "Novo Custo de Viagem", new_viagem_custo_path(@viagem)%></td>
+<td><%= link_to "Custos da viagem até o momento", viagem_custos_path(@viagem)%></td>
+
+
+

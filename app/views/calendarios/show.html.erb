@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @calendario.user.name %>
+</p>
+
+<p>
+  <strong>Viagem:</strong>
+  <%= @calendario.viagem.name %>
+</p>
+
+<%= link_to 'Edit', edit_calendario_path(@calendario) %> |
+<%= link_to 'Back', calendarios_path %>

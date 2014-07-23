@@ -10,10 +10,11 @@
 	Bem vindo <%= current_user.email %> 
 	<%= link_to "Atualizar Cadastro", edit_user_registration_path%> / 
 	<%= link_to "Cadastrar Viagem", new_viagem_path%> / 
-	<%= link_to "Agendameto de Viagem", new_agendamento_path%> / 
+	<%= link_to "Calendario de Viagem", new_calendario_path%> / 
 	<%= link_to "Encerrar sessão", destroy_user_session_path, method: :delete %>
 	<%else%>
-	<%= link_to "Cadastrar", new_user_registration_path %> / <%= link_to "Entrar", new_user_session_path %>
+	<%= link_to "Cadastrar", new_user_registration_path %> / <%= link_to "Entrar", new_user_session_path
+	%>
 <%end%>
 <body>
 	<p class="notice"><%= notice %></p>

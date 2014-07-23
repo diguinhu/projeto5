@@ -14,11 +14,7 @@ class AgendamentosController < ApplicationController
 
   # GET /agendamentos/new
   def new
-    if current_user.present?
     @agendamento = Agendamento.new
-    else
-      redirect_to '/users/sign_in'
-    end
   end
 
   # GET /agendamentos/1/edit

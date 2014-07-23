@@ -1,6 +1,8 @@
 class CustosController < ApplicationController
-  
+
+  #before_action :set_viagem, only: [:show, :edit, :update,:destroy]
   before_action :set_custo, only: [:show, :edit, :update, :destroy]
+  
 
   # GET /custos
   # GET /custos.json
@@ -23,7 +25,7 @@ class CustosController < ApplicationController
   def new
     @viagem = Viagem.find(params[:viagem_id])
     if current_user.present?
-    @custo = Custo.new
+    @custo = @viagem.custos.new
     else
       redirect_to '/users/sign_in'
     end
@@ -77,12 +79,11 @@ class CustosController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_custo
+      #@viagem = Viagem.find(params[:viagem_id])
       @custo = Custo.find(params[:id])
     end
 
-    def set_viagem
-      @viagem = Viagem.find(params[:viagem_id])
-    end
+    
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def custo_params

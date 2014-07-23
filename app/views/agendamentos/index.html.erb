@@ -4,8 +4,6 @@
   <thead>
     <tr>
       <th>User</th>
-      <th>User</th>
-      <th>Viagem</th>
       <th>Viagem</th>
       <th colspan="3"></th>
     </tr>
@@ -14,10 +12,8 @@
   <tbody>
     <% @agendamentos.each do |agendamento| %>
       <tr>
-        <td><%= agendamento.user.id %></td>
-        <td><%= agendamento.user.name %></td>
-        <td><%= agendamento.viagem.id %></td>
-        <td><%= agendamento.viagem.name %></td>
+        <td><%= agendamento.user %></td>
+        <td><%= agendamento.viagem %></td>
         <td><%= link_to 'Show', agendamento %></td>
         <td><%= link_to 'Edit', edit_agendamento_path(agendamento) %></td>
         <td><%= link_to 'Destroy', agendamento, method: :delete, data: { confirm: 'Are you sure?' } %></td>

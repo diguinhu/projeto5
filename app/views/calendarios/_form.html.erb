@@ -1,0 +1,25 @@
+<%= form_for(@calendario) do |f| %>
+  <% if @calendario.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@calendario.errors.count, "error") %> prohibited this calendario from being saved:</h2>
+
+      <ul>
+      <% @calendario.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.collection_select(:user_id, User.order(:name), :id, :name) %>
+  </div>
+  <div class="field">
+    <%= f.label :viagem_id %><br>
+    <%= f.collection_select(:viagem_id, Viagem.order(:name), :id, :name) %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

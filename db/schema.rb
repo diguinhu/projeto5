@@ -11,17 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140710123038) do
+ActiveRecord::Schema.define(version: 20140723182427) do
 
-  create_table "agendamentos", force: true do |t|
+  create_table "calendarios", force: true do |t|
     t.integer  "user_id"
     t.integer  "viagem_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "agendamentos", ["user_id"], name: "index_agendamentos_on_user_id", using: :btree
-  add_index "agendamentos", ["viagem_id"], name: "index_agendamentos_on_viagem_id", using: :btree
+  add_index "calendarios", ["user_id"], name: "index_calendarios_on_user_id", using: :btree
+  add_index "calendarios", ["viagem_id"], name: "index_calendarios_on_viagem_id", using: :btree
+
+  create_table "calendars", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "viaem_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "calendars", ["user_id"], name: "index_calendars_on_user_id", using: :btree
+  add_index "calendars", ["viaem_id"], name: "index_calendars_on_viaem_id", using: :btree
 
   create_table "custos", force: true do |t|
     t.string   "tipo"
@@ -66,6 +76,9 @@ ActiveRecord::Schema.define(version: 20140710123038) do
     t.date     "date"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id_id"
   end
+
+  add_index "viagems", ["user_id_id"], name: "index_viagems_on_user_id_id", using: :btree
 
 end
