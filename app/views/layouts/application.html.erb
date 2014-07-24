@@ -1,20 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<style type="text/css">
+	#content{
+		float: right;
+		text-align: right;
+
+	}
+	#content a{
+		color: #fff;
+		padding: 5px 10px;
+		border-radius: 90px;
+		background-color: #FF0000;
+		text-decoration: none;
+		margin-right: 5px; 
+		margin-left: 5px;
+	} 	
+	</style>
   <title>Projeto5</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <% if user_signed_in? %>
-	Bem vindo <%= current_user.email %> 
-	<%= link_to "Atualizar Cadastro", edit_user_registration_path%> / 
-	<%= link_to "Cadastrar Viagem", new_viagem_path%> / 
-	<%= link_to "Calendario de Viagem", new_calendario_path%> / 
+	
+	<strong>Bem vindo,<%= current_user.name %> </strong>
+	<div id="content">
+	<%= link_to "Atualizar Cadastro", edit_user_registration_path%>    
 	<%= link_to "Encerrar sessão", destroy_user_session_path, method: :delete %>
+	</div>
 	<%else%>
+	<div id="content">
 	<%= link_to "Cadastrar", new_user_registration_path %> / <%= link_to "Entrar", new_user_session_path
 	%>
+	</div>
 <%end%>
 <body>
 	<p class="notice"><%= notice %></p>
@@ -23,4 +42,5 @@
 <%= yield %>
 
 </body>
+
 </html>

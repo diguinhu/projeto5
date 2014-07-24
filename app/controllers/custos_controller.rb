@@ -71,7 +71,7 @@ class CustosController < ApplicationController
   def destroy
     @custo.destroy
     respond_to do |format|
-      format.html { redirect_to custos_url, notice: 'Custo was successfully destroyed.' }
+      format.html { redirect_to viagems_path, notice: 'Custo was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

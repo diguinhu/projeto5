@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :homes
+
   resources :calendarios
 
   resources :agendas
@@ -73,5 +75,5 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-  root :to => "viagems#index"
+  root :to => "homes#index"
 end
