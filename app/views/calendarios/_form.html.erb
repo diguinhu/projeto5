@@ -15,10 +15,7 @@
     <%= f.label :user_id %><br>
     <%= f.collection_select(:user_id, User.order(:name), :id, :name) %>
   </div>
-  <div class="field">
-    <%= f.label :viagem_id %><br>
-    <%= f.collection_select(:viagem_id, Viagem.order(:name), :id, :name) %>
-  </div>
+  
   <div class="actions">
     <%= f.submit %>
   </div>
